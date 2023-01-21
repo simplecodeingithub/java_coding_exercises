@@ -1,19 +1,24 @@
 package com.techreturners.exercise004;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.*;
+import java.time.temporal.TemporalAmount;
 
 public class Exercise004 {
+    private LocalDate date;
+    private LocalDateTime moment;
+
 
     public Exercise004(LocalDate date) {
-        throw new UnsupportedOperationException("You can delete this statement and add your code here.");
+      moment=LocalDateTime.of(date,LocalTime.MIN);
     }
 
     public Exercise004(LocalDateTime dateTime) {
-        throw new UnsupportedOperationException("You can delete this statement and add your code here.");
+        moment=dateTime;
     }
 
     public LocalDateTime getDateTime() {
-        throw new UnsupportedOperationException("You can delete this statement and add your code here.");
+        return moment.plusSeconds((long) Math.pow(10,9));
+       // return moment.plusSeconds(1000000000);
+
     }
 }
