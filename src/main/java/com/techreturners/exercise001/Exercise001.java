@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 import java.util.Collections;
 import java.util.List;
 
+
 public class Exercise001 {
     public String capitalizeWord(String word) {
         return Character.toUpperCase(word.charAt(0))+word.substring(1);
@@ -27,13 +28,7 @@ public class Exercise001 {
         return new StringBuilder(sentence).reverse().toString();
     }
 
-    public int countLinuxUsers(List<User> users) {
-        int count=0;
-        for(User user:users){
-            if(user.getType().equals("Linux")){
-                count++;
-            }
-        }
-        return count;
+    public static long countLinuxUsers(List<User> users) {
+        return users.stream().filter(user ->"Linux".equals(user.getType())).count();
     }
 }
